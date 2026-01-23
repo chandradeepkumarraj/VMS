@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { apiService } from '../services/apiService';
 import { Message } from '../types';
-import { Send, User as UserIcon, MessageSquare } from 'lucide-react';
+import { Send, MessageSquare } from 'lucide-react';
 import { io, Socket } from 'socket.io-client';
 
 interface MessageCenterProps {
@@ -80,8 +80,8 @@ export const MessageCenter: React.FC<MessageCenterProps> = ({ jobId, recipientId
                 {messages.map((msg, idx) => (
                     <div key={idx} className={`flex ${msg.fromId === user?.id ? 'justify-end' : 'justify-start'}`}>
                         <div className={`max-w-[80%] rounded-2xl p-3 text-sm shadow-sm ${msg.fromId === user?.id
-                                ? 'bg-indigo-600 text-white rounded-tr-none'
-                                : 'bg-white text-slate-700 border border-slate-200 rounded-tl-none'
+                            ? 'bg-indigo-600 text-white rounded-tr-none'
+                            : 'bg-white text-slate-700 border border-slate-200 rounded-tl-none'
                             }`}>
                             {msg.content}
                             <div className={`text-[10px] mt-1 font-bold ${msg.fromId === user?.id ? 'text-indigo-200' : 'text-slate-400'}`}>

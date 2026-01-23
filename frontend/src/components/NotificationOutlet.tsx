@@ -26,7 +26,7 @@ export const NotificationOutlet: React.FC = () => {
         };
 
         const handleSubmissionUpdate = (data: any) => {
-            toast.info(`Candidate ${data.status}: ${data.candidateName}`, {
+            toast(`Candidate ${data.status}: ${data.candidateName}`, {
                 icon: '📋',
                 duration: 4000,
                 style: {
