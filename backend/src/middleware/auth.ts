@@ -6,9 +6,6 @@ export interface AuthRequest extends Request {
         id: string;
         role: string;
     };
-    body: any; // Explicitly add body to avoid inference issues if Request is partially resolved
-    params: any;
-    query: any;
 }
 
 export const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction) => {

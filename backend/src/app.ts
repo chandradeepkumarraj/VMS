@@ -51,6 +51,13 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/payments', paymentRoutes);
 
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: 'VMS API Engine is running',
+        docs: '/api/health'
+    });
+});
+
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
 });
