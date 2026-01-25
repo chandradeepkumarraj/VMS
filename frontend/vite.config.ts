@@ -10,10 +10,10 @@ export default defineConfig(({ mode }) => {
         tailwindcss(),
         ],
         server: {
-            port: 3000,
+            port: Number(env.VITE_PORT),
             proxy: {
                 '/api': {
-                    target: env.VITE_API_URL || 'http://localhost:3001',
+                    target: env.VITE_API_URL,
                     changeOrigin: true
                 }
             }
