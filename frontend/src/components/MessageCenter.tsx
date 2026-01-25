@@ -28,7 +28,8 @@ export const MessageCenter: React.FC<MessageCenterProps> = ({ jobId, recipientId
         };
         fetchMessages();
 
-        const newSocket = io(import.meta.env.VITE_WS_URL || 'http://localhost:3001');
+        const wsUrl = import.meta.env.VITE_API_URL;
+        const newSocket = io(wsUrl);
         setSocket(newSocket);
 
         newSocket.emit('join-job', jobId);
